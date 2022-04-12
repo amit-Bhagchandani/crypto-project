@@ -1,0 +1,106 @@
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-page: linear-gradient(90deg, #8a026cb7 0%, #8490e6 62%, #7006fa 100%);
+    --background-clr-1: #2c2c2e6b;
+    --background-clr-2: #38383879;
+    --background-clr-3: #ffffff56;
+
+    --fontSize-100: clamp(0.92rem, 0.7vw + 0.4rem, 1.65rem);
+    --fontSize-200: clamp(1rem, 0.8vw + 0.6rem, 2.3rem);
+    --fontSize-300: clamp(1.2rem, 0.8vw + 0.8rem, 2.7rem);
+    --fontSize-400: clamp(1.8rem, 1.2vw + 1rem, 3.5rem);
+    --fontSize-500: clamp(2rem, 1.5vw + 1rem, 5rem);
+    --fontSize-600: clamp(2.6rem, 3.5vw + 1rem, 7.3rem);
+}
+
+p{
+    margin: 0;
+    font-size: var(--fontSize-100);
+}
+.page {
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 1rem;
+    color: blueviolet;
+    background: var(--background-page)
+}
+
+.container {
+    max-width: 1000px;
+    height: 95%;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--background-clr-1);
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1.2fr 1fr;
+    gap: 1rem;
+    border-radius: 0.3rem;
+}
+
+.card {
+    width: 100%;
+    min-height: 5rem;
+    background-color: var(--background-clr-3);
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+}
+
+.carousel-status{
+    display: none;
+}
+
+.carousel .control-next.control-arrow {
+    border-top-right-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+}
+
+.carousel .control-prev.control-arrow {
+    border-top-left-radius: 0.7rem;
+    border-bottom-left-radius: 0.7rem;
+}
+
+input {
+    width: 6rem;
+    background-color: var(--background-clr-2);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: var(--fontSize-100);
+}
+
+input:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+@keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading {
+    width: 4rem;
+    height: 4rem;
+    border: 5px solid white;
+    border-radius: 50%;
+    border-top-color: grey;
+    animation: spinner 0.6s linear infinite;
+    margin-inline:  auto;
+    margin-top: 5rem;
+  }
