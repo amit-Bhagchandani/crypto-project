@@ -26,12 +26,7 @@
 
 @media screen and (max-height: 600px) {
     .currencyConverter {
-        flex-direction: row;
-        gap: 1rem;
-    }
-    
-    .currency {
-        margin-block: auto;
+        justify-content: flex-start
     }
 
 }
