@@ -26,10 +26,10 @@ ChartJS.register(
 
  
 
-const CoinGraph = ({prices, timeStamp}) => {
+const CoinGraph = ({prices, timeStamps}) => {
 
   const data = {
-    labels: timeStamp,
+    labels: timeStamps,
     datasets: [
       {
         label: 'Price In USD',

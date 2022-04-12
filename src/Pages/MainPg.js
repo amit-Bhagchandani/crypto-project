@@ -38,7 +38,7 @@ const MainPg = () => {
                   <CoinInfo id = {maxNegPriceChangeCoin_14d.id} image = {maxNegPriceChangeCoin_14d.image} price_change = {maxNegPriceChangeCoin_14d.price_change_percentage_14d_in_currency}/>              
                 </Carousel>
 
-                <CoinGraph coinId={selectedCoin.id} prices = {selectedCoin.prices} timeStamp = {selectedCoin.timeStamp}/> 
+                <CoinGraph coinId={selectedCoin.id} prices = {selectedCoin.prices} timeStamps = {selectedCoin.timeStamps}/> 
 
                 <CurrencyConverter coinId={selectedCoin.id} rates = {selectedCoin.rates} />
               </>  

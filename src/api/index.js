@@ -3,11 +3,11 @@ const baseUrl = 'https://api.coingecko.com/api/v3/coins'
 export const getHistPrices = async (CoinId) => {
 
     const prices = []
-    const timeStamp = []
+    const timeStamps = []
     const fourteen_days_ago =  Math.round(new Date(Date.now() - (864e5*14)).getTime()/1000);
-    const toTimestamp = Date.now()
+    const today = Date.now()
     
-    return fetch(`${baseUrl}/${CoinId}/market_chart/range?vs_currency=usd&from=${fourteen_days_ago}&to=${toTimestamp}`)
+    return fetch(`${baseUrl}/${CoinId}/market_chart/range?vs_currency=usd&from=${fourteen_days_ago}&to=${today}`)
       .then(response => {
         if(!response.ok)
         {
@@ -19,10 +19,10 @@ export const getHistPrices = async (CoinId) => {
       .then(data => {
         data.prices.map(item => {
           prices.push(item[1])
-          timeStamp.push(new Date(item[0]).toLocaleDateString('en-in', {year: 'numeric', month: 'numeric', day: 'numeric'}))
+          timeStamps.push(new Date(item[0]).toLocaleDateString('en-in', {year: 'numeric', month: 'numeric', day: 'numeric'}))
         })
          
-        return {prices, timeStamp}
+        return {prices, timeStamps}
         })
        
       }
@@ -73,10 +73,10 @@ export const getCoins = async () => {
           return [sortedData[0], sortedData[49]] 
         })
         .then( async (coins) => {
-          return await Promise.all( coins.map( async (coin) =>(
+          return await Promise.all( coins.map( async (coin) =>  (
                   await fetchPricesandRates(coin.id).then(
                     data => {
-                      return {...coin, prices: data[0].prices, timeStamp: data[0].timeStamp, rates: data[1]}
+                      return {...coin, prices: data[0].prices, timeStamps: data[0].timeStamps, rates: data[1]}
                     }
                   )  
                 )
