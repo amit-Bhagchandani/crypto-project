@@ -43,7 +43,7 @@ export const getExchangeRates = async (coinId) => {
     })
     .then(
       data => {
-        const rates = data.market_data.current_price
+        const rates = data?.market_data?.current_price || {}
         Object.keys(rates).map((key) => rates[key] = rates[key].toFixed(3))
         return rates
       }

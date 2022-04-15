@@ -38,6 +38,14 @@ const CurrencyConverter = ({coinId, rates}) => {
     setSelectedCurrency(e.target.value)
   }
 
+  if(!Object.keys(rates).length) {
+    return (
+      <div className='card error'>
+        <p>'API Error :- Some error occured while fetching conversion rates, please try again later!'</p> 
+      </div> 
+    ) 
+  }
+
   return (
     <section aria-label='currency-converter' className={`${styles.currencyConverter} card`}>
       <div className={`${styles.currency}`}>

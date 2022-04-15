@@ -9,10 +9,10 @@ body {
 }
 
 :root {
-    --background-page: linear-gradient(90deg, #8a026cb7 0%, #8490e6 62%, #7006fa 100%);
+    --background-page: linear-gradient(90deg, #8a026cb7 0%, #7006fa 100%);
     --background-clr-1: #2c2c2e6b;
     --background-clr-2: #38383879;
-    --background-clr-3: #ffffff56;
+    --background-clr-3: #ffffff8c;
 
     --fontSize-100: clamp(0.92rem, 0.7vw + 0.4rem, 1.65rem);
     --fontSize-200: clamp(1rem, 0.8vw + 0.6rem, 2.3rem);
@@ -20,6 +20,9 @@ body {
     --fontSize-400: clamp(1.8rem, 1.2vw + 1rem, 3.5rem);
     --fontSize-500: clamp(2rem, 1.5vw + 1rem, 5rem);
     --fontSize-600: clamp(2.6rem, 3.5vw + 1rem, 7.3rem);
+
+    --red-light: #fac7cbe0;
+    --red-dark: #dd2a33;
 }
 
 p{
@@ -31,7 +34,7 @@ p{
     height: 100vh;
     margin: 0 auto;
     padding: 1rem;
-    color: blueviolet;
+    color: white;
     background: var(--background-page)
 }
 
@@ -70,6 +73,13 @@ p{
     border-bottom-left-radius: 0.7rem;
 }
 
+.error{
+    text-align: center;
+    background-color: var(--red-light);
+    color: var(--red-dark);
+    padding-top: 2rem;
+  }
+
 input {
     width: 6rem;
     background-color: var(--background-clr-2);
@@ -82,6 +92,10 @@ input {
 
 input:focus {
     outline: none;
+}
+
+select {
+    text-align: center;
 }
 
 select:focus {

@@ -43,10 +43,16 @@ const CoinGraph = ({prices, timeStamps}) => {
 
   const options = {
     scales: {
+      xAxes: {
+        ticks: {
+          color: '#2c2c2e'
+        }
+      },
       yAxes: 
         {
           ticks: {
             beginAtZero: false,
+            color: '#2c2c2e',
           },
         },
     },
